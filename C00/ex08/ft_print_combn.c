@@ -1,48 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_print_combn.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/27 03:10:45 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/28 03:11:00 by udasgin          ###   ########.fr       */
+/*   Created: 2026/08/28 01:42:35 by udasgin           #+#    #+#             */
+/*   Updated: 2026/08/28 02:44:36 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print(char i, char j, char k)
+void	ft_combn(int *val, int pos, int len, int min_val)
 {
-	write(1, &i, 1);
-	write(1, &j, 1);
-	write(1, &k, 1);
-	if (i != '7' || j != '8' || k != '9')
+	int		d;
+	char	c;
+
+	if (pos == len)
 	{
-		write(1, ", ", 2);
+		d = 0;
+		while (d < len)
+		{
+			c = val[d] + '0';
+			write(1, &c, 1);
+			d++;
+		}
+		if (val[0] != 10 - len)
+		{
+			write(1, ", ", 2);
+		}
+		return ;
+	}
+	d = min_val;
+	while (d < 10)
+	{
+		val[pos] = d;
+		ft_combn(val, pos + 1, len, d + 1);
+		d++;
 	}
 }
 
-void	ft_print_comb(void)
+void	ft_print_combn(int n)
 {
-	char	i;
-	char	j;
-	char	k;
+	int	digits[10];
 
-	i = '0';
-	while (i <= '7')
-	{
-		j = i + 1;
-		while (j <= '8')
-		{
-			k = j + 1;
-			while (k <= '9')
-			{
-				ft_print(i, j, k);
-				k++;
-			}
-			j++;
-		}
-		i++;
-	}
+	ft_combn(digits, 0, n, 0);
 }

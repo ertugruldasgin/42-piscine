@@ -1,48 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/27 03:10:45 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/28 03:11:00 by udasgin          ###   ########.fr       */
+/*   Created: 2026/08/27 17:27:52 by udasgin           #+#    #+#             */
+/*   Updated: 2026/08/28 01:07:33 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print(char i, char j, char k)
+void	ft_putnbr(int nb)
 {
-	write(1, &i, 1);
-	write(1, &j, 1);
-	write(1, &k, 1);
-	if (i != '7' || j != '8' || k != '9')
-	{
-		write(1, ", ", 2);
-	}
-}
+	char	a;
+	char	c;
 
-void	ft_print_comb(void)
-{
-	char	i;
-	char	j;
-	char	k;
-
-	i = '0';
-	while (i <= '7')
+	c = '-';
+	if (nb < 0)
 	{
-		j = i + 1;
-		while (j <= '8')
+		write(1, &c, 1);
+		if (nb / 10)
 		{
-			k = j + 1;
-			while (k <= '9')
-			{
-				ft_print(i, j, k);
-				k++;
-			}
-			j++;
+			ft_putnbr(-(nb / 10));
 		}
-		i++;
+		a = -(nb % 10) + '0';
 	}
+	else
+	{
+		if (nb / 10)
+		{
+			ft_putnbr(nb / 10);
+		}
+		a = (nb % 10) + '0';
+	}
+	write(1, &a, 1);
 }

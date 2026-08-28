@@ -1,45 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/27 03:10:45 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/28 03:11:00 by udasgin          ###   ########.fr       */
+/*   Created: 2026/08/27 18:22:13 by udasgin           #+#    #+#             */
+/*   Updated: 2026/08/28 01:34:00 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print(char i, char j, char k)
+void	ft_convert_num(int n)
 {
-	write(1, &i, 1);
-	write(1, &j, 1);
-	write(1, &k, 1);
-	if (i != '7' || j != '8' || k != '9')
-	{
-		write(1, ", ", 2);
-	}
+	char	c;
+
+	c = n / 10 + '0';
+	write(1, &c, 1);
+	c = n % 10 + '0';
+	write(1, &c, 1);
 }
 
-void	ft_print_comb(void)
+void	ft_print_comb2(void)
 {
-	char	i;
-	char	j;
-	char	k;
+	int	i;
+	int	j;
 
-	i = '0';
-	while (i <= '7')
+	i = 0;
+	while (i < 99)
 	{
 		j = i + 1;
-		while (j <= '8')
+		while (j < 100)
 		{
-			k = j + 1;
-			while (k <= '9')
+			ft_convert_num(i);
+			write(1, " ", 1);
+			ft_convert_num(j);
+			if (!(i == 98 && j == 99))
 			{
-				ft_print(i, j, k);
-				k++;
+				write(1, ", ", 2);
 			}
 			j++;
 		}
