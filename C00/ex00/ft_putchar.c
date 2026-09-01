@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 02:38:42 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/30 15:58:57 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/02 02:03:22 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,4 @@
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-}
-
-int	main(void)
-{
-	char	c;
-
-	c = 'a';
-	ft_putchar(c);
 }
