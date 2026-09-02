@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/02 02:33:49 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/02 17:16:16 by udasgin          ###   ########.fr       */
+/*   Created: 2026/09/02 17:08:10 by udasgin           #+#    #+#             */
+/*   Updated: 2026/09/02 18:34:38 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_H
+# define FT_H
 
-char	*ft_strdup(char *src)
-{
-	char	*ptr;
-	char	*res;
-	int		len;
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
-	len = 0;
-	while (src[len])
-		len++;
-	ptr = malloc(sizeof(char) * (len + 1));
-	if (!ptr)
-		return (NULL);
-	res = ptr;
-	while (*src)
-	{
-		*ptr++ = *src++;
-	}
-	*ptr = '\0';
-	return (res);
-}
+#endif /* ifndef FT_H */
