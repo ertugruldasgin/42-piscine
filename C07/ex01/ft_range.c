@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/02 02:33:49 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/02 15:14:28 by udasgin          ###   ########.fr       */
+/*   Created: 2026/09/02 14:55:19 by udasgin           #+#    #+#             */
+/*   Updated: 2026/09/02 15:12:08 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(char *src)
+int	*ft_range(int min, int max)
 {
-	char	*ptr;
-	char	*res;
-	int		len;
+	int	*head;
+	int	*ptr;
+	int	len;
 
-	len = 0;
-	while (src[len])
-		len++;
-	ptr = malloc(sizeof(char) * (len + 1));
-	if (!ptr)
+	if (min >= max)
 		return (NULL);
-	res = ptr;
-	while (*src)
+	len = max - min;
+	head = malloc(sizeof(int) * len);
+	if (!head)
+		return (NULL);
+	ptr = head;
+	while (len--)
 	{
-		*ptr++ = *src++;
+		*ptr++ = min++;
 	}
-	*ptr = '\0';
-	return (res);
+	return (head);
 }

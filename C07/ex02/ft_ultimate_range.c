@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/02 02:33:49 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/02 15:14:28 by udasgin          ###   ########.fr       */
+/*   Created: 2026/09/02 15:14:45 by udasgin           #+#    #+#             */
+/*   Updated: 2026/09/02 15:31:15 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(char *src)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	char	*ptr;
-	char	*res;
-	int		len;
+	int	i;
+	int	*res;
 
-	len = 0;
-	while (src[len])
-		len++;
-	ptr = malloc(sizeof(char) * (len + 1));
-	if (!ptr)
-		return (NULL);
-	res = ptr;
-	while (*src)
+	if (min >= max)
 	{
-		*ptr++ = *src++;
+		*range = NULL;
+		return (0);
 	}
-	*ptr = '\0';
-	return (res);
+	res = malloc(sizeof(int) * (max - min));
+	if (!res)
+	{
+		*range = NULL;
+		return (0);
+	}
+	i = 0;
+	while (min < max)
+		res[i++] = min++;
+	*range = res;
+	return (i);
 }
