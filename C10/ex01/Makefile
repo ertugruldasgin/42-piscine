@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/09/04 03:39:49 by udasgin           #+#    #+#              #
-#    Updated: 2026/09/04 06:25:45 by udasgin          ###   ########.fr        #
+#    Created: 2026/09/04 06:24:53 by udasgin           #+#    #+#              #
+#    Updated: 2026/09/04 06:25:37 by udasgin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
-SRCS = ft_display_file.c
+SRCS = ft_cat.c
 OBJS = $(SRCS:.c=.o)
-NAME = ft_display_file
+NAME = ft_cat
 
 all: $(NAME)
 
