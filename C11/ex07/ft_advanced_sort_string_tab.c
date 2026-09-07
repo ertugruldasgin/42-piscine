@@ -1,24 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_string_tab.c                               :+:      :+:    :+:   */
+/*   ft_advanced_sort_string_tab.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/07 14:29:48 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/07 15:20:31 by udasgin          ###   ########.fr       */
+/*   Created: 2026/09/07 14:58:36 by udasgin           #+#    #+#             */
+/*   Updated: 2026/09/07 15:20:10 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_strcmp(char *str1, char *str2)
-{
-	while (*str1 && *str2 && *str1 == *str2)
-	{
-		str1++;
-		str2++;
-	}
-	return (*str1 - *str2);
-}
 
 void	ft_swap(char **a, char **b)
 {
@@ -29,7 +19,7 @@ void	ft_swap(char **a, char **b)
 	*b = temp;
 }
 
-void	ft_sort_string_tab(char **tab)
+void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 {
 	int	i;
 	int	flag;
@@ -41,7 +31,7 @@ void	ft_sort_string_tab(char **tab)
 		i = 0;
 		while (tab[i] && tab[i + 1])
 		{
-			if (ft_strcmp(tab[i], tab[i + 1]) > 0)
+			if (cmp(tab[i], tab[i + 1]) > 0)
 			{
 				ft_swap(&tab[i], &tab[i + 1]);
 				flag = 1;
