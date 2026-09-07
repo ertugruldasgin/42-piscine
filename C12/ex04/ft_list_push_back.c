@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 21:15:56 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/07 21:17:56 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/08 00:33:49 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,19 @@ t_list	*ft_create_elem(void *data)
 
 void	ft_list_push_back(t_list **begin_list, void *data)
 {
+	t_list	*node;
+	t_list	*curr;
+
+	node = ft_create_elem(data);
+	if (!node)
+		return ;
+	if (!*begin_list)
+	{
+		*begin_list = node;
+		return ;
+	}
+	curr = *begin_list;
+	while (curr->next)
+		curr = curr->next;
+	curr->next = node;
 }
