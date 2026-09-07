@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/28 03:30:50 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/07 15:34:59 by udasgin          ###   ########.fr       */
+/*   Created: 2026/09/07 16:51:08 by udasgin           #+#    #+#             */
+/*   Updated: 2026/09/07 17:01:35 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
-{
-	*div = a / b;
-	*mod = a % b;
-}
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-int	main(void)
+typedef struct s_list
 {
-	int	a;
-	int	b;
-	int	*mod;
-	int	*div;
+	void			*data;
+	struct s_list	*next;
+}					t_list;
 
-	a = 5;
-	b = 2;
-	ft_div_mod(a, b, div, mod);
-}
+t_list				*ft_create_elem(void *data);
+
+#endif /* ifndef FT_LIST_H */

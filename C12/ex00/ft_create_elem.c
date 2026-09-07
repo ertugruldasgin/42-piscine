@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_create_elem.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/28 03:30:50 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/07 15:34:59 by udasgin          ###   ########.fr       */
+/*   Created: 2026/09/07 15:33:14 by udasgin           #+#    #+#             */
+/*   Updated: 2026/09/07 17:58:57 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
-{
-	*div = a / b;
-	*mod = a % b;
-}
+#include "ft_list.h"
+#include <stdlib.h>
 
-int	main(void)
+t_list	*ft_create_elem(void *data)
 {
-	int	a;
-	int	b;
-	int	*mod;
-	int	*div;
+	t_list	*node;
 
-	a = 5;
-	b = 2;
-	ft_div_mod(a, b, div, mod);
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->data = data;
+	node->next = NULL;
+	return (node);
 }
