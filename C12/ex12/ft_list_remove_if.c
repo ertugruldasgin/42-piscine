@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/08 00:58:03 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/08 18:38:48 by udasgin          ###   ########.fr       */
+/*   Created: 2026/09/08 19:35:02 by udasgin           #+#    #+#             */
+/*   Updated: 2026/09/08 19:55:38 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "ft_list.h"
+#include <stdlib.h>
 
-typedef struct s_list
+void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(),
+		void (*free_fct)(void *))
 {
-	void			*data;
-	struct s_list	*next;
-}					t_list;
+	t_list	**node;
+	t_list	*temp;
 
-t_list				*ft_create_elem(void *data);
-
-#endif /* ifndef FT_LIST_H */
+	node = begin_list;
+	while (*node)
+	{
+		if (cmp((*node)->data, data_ref) == 0)
+		{
+			temp = *node;
+			*node = temp->next;
+			free_fct(temp->data);
+			free(temp);
+		}
+		else
+		{
+			*node = (*node)->next;
+		}
+	}
+}

@@ -6,18 +6,19 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/08 00:39:08 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/08 00:39:10 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/08 18:38:52 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIST_H
-#define FT_LIST_H
+# define FT_LIST_H
 
-typedef struct s_list {
-  void *data;
-  struct s_list *next;
-} t_list;
+typedef struct s_list
+{
+	void			*data;
+	struct s_list	*next;
+}					t_list;
 
-t_list *ft_create_elem(void *data);
+t_list				*ft_create_elem(void *data);
 
 #endif /* ifndef FT_LIST_H */

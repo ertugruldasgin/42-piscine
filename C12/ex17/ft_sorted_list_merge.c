@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_sorted_list_merge.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/08 00:58:03 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/08 18:38:48 by udasgin          ###   ########.fr       */
+/*   Created: 2026/09/08 20:52:52 by udasgin           #+#    #+#             */
+/*   Updated: 2026/09/08 21:10:17 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "ft_list.h"
 
-typedef struct s_list
+void	ft_sorted_list_merge(t_list **begin_list1, t_list *begin_list2,
+		int (*cmp)())
 {
-	void			*data;
-	struct s_list	*next;
-}					t_list;
-
-t_list				*ft_create_elem(void *data);
-
-#endif /* ifndef FT_LIST_H */
+}

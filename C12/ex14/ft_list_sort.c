@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_list_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/08 00:58:03 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/08 18:38:48 by udasgin          ###   ########.fr       */
+/*   Created: 2026/09/08 19:59:50 by udasgin           #+#    #+#             */
+/*   Updated: 2026/09/08 20:12:38 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "ft_list.h"
 
-typedef struct s_list
+void	ft_list_sort(t_list **begin_list, int (*cmp)(void *, void *))
 {
-	void			*data;
-	struct s_list	*next;
-}					t_list;
+	t_list	*prev;
+	t_list	*cur;
 
-t_list				*ft_create_elem(void *data);
-
-#endif /* ifndef FT_LIST_H */
+	prev = *begin_list;
+	cur = prev->next;
+}
