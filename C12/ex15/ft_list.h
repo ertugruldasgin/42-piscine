@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_sort.c                                     :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/08 19:59:50 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/09 03:32:02 by udasgin          ###   ########.fr       */
+/*   Created: 2026/09/09 03:32:53 by udasgin           #+#    #+#             */
+/*   Updated: 2026/09/09 03:32:55 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-void	ft_list_sort(t_list **begin_list, int (*cmp)(void *, void *))
+typedef struct s_list
 {
-	t_list	*cur;
-	void	*temp;
-	int		flag;
+	void			*data;
+	struct s_list	*next;
+}					t_list;
 
-	flag = 1;
-	while (flag)
-	{
-		flag = 0;
-		cur = *begin_list;
-		while (cur && cur->next)
-		{
-			if (cmp(cur->data, cur->next->data) > 0)
-			{
-				temp = cur->data;
-				cur->data = cur->next->data;
-				cur->next->data = temp;
-				flag = 1;
-			}
-			cur = cur->next;
-		}
-	}
-}
+t_list				*ft_create_elem(void *data);
+
+#endif /* ifndef FT_LIST_H */
