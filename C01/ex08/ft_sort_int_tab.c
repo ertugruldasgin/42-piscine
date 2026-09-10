@@ -6,9 +6,11 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 06:34:53 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/28 06:50:38 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/10 17:44:13 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 void	ft_swap(int *a, int *b)
 {
@@ -38,5 +40,19 @@ void	ft_sort_int_tab(int *tab, int size)
 			}
 			i++;
 		}
+	}
+}
+
+int	main(void)
+{
+	int	tab[5] = {2, 5, 1, 4, 3};
+	int	i;
+
+	ft_sort_int_tab(tab, 5);
+	i = 0;
+	while (i < 5)
+	{
+		printf("%d", tab[i]);
+		i++;
 	}
 }

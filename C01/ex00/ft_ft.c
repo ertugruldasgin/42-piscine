@@ -6,11 +6,23 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 03:17:34 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/28 03:18:33 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/10 23:43:45 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 void	ft_ft(int *nbr)
 {
 	*nbr = 42;
+}
+
+int	main(void)
+{
+	int	a;
+
+	a = 4;
+	printf("%d\n", a);
+	ft_ft(&a);
+	printf("%d", a);
 }

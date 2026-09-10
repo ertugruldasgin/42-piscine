@@ -6,9 +6,11 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 03:50:33 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/28 03:51:47 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/10 17:37:20 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 int	ft_strlen(char *str)
 {
@@ -21,4 +23,14 @@ int	ft_strlen(char *str)
 		str++;
 	}
 	return (len);
+}
+
+int	main(void)
+{
+	int		len;
+	char	str[] = "selam";
+
+	len = ft_strlen(str);
+	printf("%d", len);
+	return (0);
 }
