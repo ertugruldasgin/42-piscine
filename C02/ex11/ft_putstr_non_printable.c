@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 08:31:45 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/12 17:12:31 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/12 17:42:42 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,12 @@ void	ft_putstr_non_printable(char *str)
 		}
 		str++;
 	}
+}
+
+int	main(void)
+{
+	char	str[] = "sel\nam";
+
+	ft_putstr_non_printable(str);
+	return (0);
 }
