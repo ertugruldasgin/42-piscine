@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 07:22:11 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/28 07:27:19 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/12 16:42:01 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@ int	ft_str_is_printable(char *str)
 {
 	while (*str)
 	{
-		if (!(*str > 31 && *str < 127))
-		{
+		if (!(*str >= 32 && *str <= 126))
 			return (0);
-		}
 		str++;
 	}
 	return (1);

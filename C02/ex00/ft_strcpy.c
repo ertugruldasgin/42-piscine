@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 06:53:07 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/28 06:58:38 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/12 16:39:13 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@ char	*ft_strcpy(char *dest, char *src)
 
 	res = dest;
 	while (*src)
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
+		*dest++ = *src++;
+	*dest = '\0';
 	return (res);
 }

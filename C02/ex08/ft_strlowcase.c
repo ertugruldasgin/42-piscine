@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 07:34:46 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/28 07:35:16 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/12 16:43:50 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ char	*ft_strlowcase(char *str)
 	while (*str)
 	{
 		if (*str >= 'A' && *str <= 'Z')
-		{
 			*str += 32;
-		}
 		str++;
 	}
 	return (res);

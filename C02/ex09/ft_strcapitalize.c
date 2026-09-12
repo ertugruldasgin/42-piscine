@@ -6,15 +6,14 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 07:35:41 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/28 08:01:38 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/12 16:45:25 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_is_alphanumeric(char c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	if (c >= '0' && c <= '9')
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0'
+			&& c <= '9'))
 		return (1);
 	return (0);
 }

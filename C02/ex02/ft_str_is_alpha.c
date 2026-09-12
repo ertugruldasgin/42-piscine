@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 07:10:42 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/28 07:26:40 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/12 16:41:04 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@ int	ft_str_is_alpha(char *str)
 	while (*str)
 	{
 		if (!((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z')))
-		{
 			return (0);
-		}
 		str++;
 	}
 	return (1);
