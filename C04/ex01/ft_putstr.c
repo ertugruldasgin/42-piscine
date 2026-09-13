@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 01:25:04 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/30 01:26:30 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/14 02:06:40 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,5 @@
 void	ft_putstr(char *str)
 {
 	while (*str)
-	{
-		write(1, str, 1);
-		str++;
-	}
+		write(1, str++, 1);
 }

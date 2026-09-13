@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/01 17:26:24 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/01 17:37:26 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/14 01:40:21 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_is_prime(int nb)
 	i = 2;
 	if (nb == 0 || nb == 1)
 		return (0);
-	while (i * i <= nb)
+	while (i <= nb / i)
 	{
 		if (nb % i == 0)
 			return (0);
