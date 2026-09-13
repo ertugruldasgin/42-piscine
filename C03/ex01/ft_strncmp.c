@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/29 18:10:15 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/29 18:16:12 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/13 17:44:04 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	ft_strncmp(char *str1, char *str2, unsigned int n)
 		}
 		str1++;
 		str2++;
-		n--;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/29 18:37:40 by udasgin           #+#    #+#             */
-/*   Updated: 2026/08/29 18:49:21 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/13 17:43:26 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ char	*ft_strstr(char *str, char *to_find)
 	{
 		temp_str = str;
 		temp_find = to_find;
-		while (*str && *temp_find && *str == *temp_find)
+		while (*temp_str && *temp_find && *temp_str == *temp_find)
 		{
-			str++;
+			temp_str++;
 			temp_find++;
 		}
 		if (!*temp_find)
-			return (temp_str);
+			return (str);
 		str++;
 	}
 	return (0);
