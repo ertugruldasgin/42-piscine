@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/01 17:12:01 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/14 01:40:04 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/14 04:04:25 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_sqrt(int nb)
 
 	if (nb < 0)
 		return (0);
-	i = 0;
+	i = 1;
 	while (i <= nb / i)
 	{
 		if (i == nb / i)
