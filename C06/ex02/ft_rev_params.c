@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/01 20:35:37 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/01 20:39:23 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/15 12:27:56 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,19 @@
 void	ft_print_arg(char arg[])
 {
 	while (*arg)
-	{
-		write(1, arg, 1);
-		arg++;
-	}
+		write(1, arg++, 1);
 }
 
 int	main(int argc, char *argv[])
 {
 	int	i;
 
-	if (argc < 2)
-		return (0);
 	i = argc - 1;
-	while (i > 1)
+	while (i > 0)
 	{
-		if (*argv[i])
-		{
-			ft_print_arg(argv[i]);
-			write(1, "\n", 1);
-			i--;
-		}
+		ft_print_arg(argv[i]);
+		write(1, "\n", 1);
+		i--;
 	}
+	return (0);
 }

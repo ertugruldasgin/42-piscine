@@ -6,7 +6,7 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/01 20:39:49 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/02 02:06:44 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/15 12:33:51 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,16 @@ void	ft_arg_swap(char **a, char **b)
 	*b = temp;
 }
 
-void	ft_print_all_args(char **args)
+void	ft_print_all_args(int argc, char *argv[])
 {
-	args++;
-	while (**args)
+	int	i;
+
+	i = 1;
+	while (i < argc)
 	{
-		ft_print_arg(*args);
+		ft_print_arg(argv[i]);
 		write(1, "\n", 1);
-		args++;
+		i++;
 	}
 }
 
@@ -70,7 +72,7 @@ int	main(int argc, char *argv[])
 			}
 			i++;
 		}
-		ft_print_all_args(argv);
+		ft_print_all_args(argc, argv);
 	}
 	return (0);
 }
