@@ -6,10 +6,11 @@
 /*   By: udasgin@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/02 15:33:14 by udasgin           #+#    #+#             */
-/*   Updated: 2026/09/02 16:06:02 by udasgin          ###   ########.fr       */
+/*   Updated: 2026/09/16 16:48:28 by udasgin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 
 int	ft_strlen(char *str)
@@ -68,4 +69,17 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	}
 	*ptr = '\0';
 	return (res);
+}
+
+int	main(void)
+{
+	char	*strs[3];
+	char	*res;
+
+	strs[0] = "anny";
+	strs[1] = "billy";
+	strs[2] = "cho";
+	res = ft_strjoin(3, strs, ", ");
+	printf("%s", res);
+	return (0);
 }
